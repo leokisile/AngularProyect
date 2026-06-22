@@ -8,7 +8,7 @@ import { Categoria } from '../model/categoria';
 })
 export class CategoriaService {
   private http: HttpClient = inject(HttpClient);
-  private readonly urlEndPoint: string = 'http://localhost:8085/api/v1/categorias/categoria';
+  private readonly urlEndPoint: string = 'https://miniinventario-8mtk.onrender.com/api/v1/categorias/categoria';
 
   private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json'
