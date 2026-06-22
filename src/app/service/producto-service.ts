@@ -2,13 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Producto } from '../model/producto';
+import { environment } from '../../environments/environments.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
   private http: HttpClient = inject(HttpClient);
-  private readonly urlEndPoint: string = 'https://miniinventario-8mtk.onrender.com/api/v1/productos';
+  private readonly urlEndPoint: string = environment.apiUrl + '/api/v1/productos';
 
   private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json'

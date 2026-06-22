@@ -2,13 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Categoria } from '../model/categoria';
+import { environment } from '../../environments/environments.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriaService {
   private http: HttpClient = inject(HttpClient);
-  private readonly urlEndPoint: string = 'https://miniinventario-8mtk.onrender.com/api/v1/categorias/categoria';
+  private readonly urlEndPoint: string = environment.apiUrl + '/api/v1/categorias/categoria';
 
   private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json'
